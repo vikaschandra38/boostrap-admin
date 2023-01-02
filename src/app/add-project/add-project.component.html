@@ -1,0 +1,147 @@
+<div class="d-flex justify-content-between align-items-center">
+  <h2>Project Add</h2>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+  </nav>
+</div>
+<div class="row mt-4" [formGroup]="project">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header bg-primary d-flex text-white fw-bold">
+        <span class="me-auto">General</span>
+        <span
+          ><i
+            class="bi bi-dash-lg fw-bold"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            role="button"
+          ></i>
+        </span>
+      </div>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body p-4 mb-0 shadow-sm border" formGroupName="general">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label fw-bold"
+              >Project Name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              formControlName="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label fw-bold"
+              >Project Description</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              formControlName="description"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label fw-bold"
+              >Status</label
+            >
+            <select class="form-select" aria-label="Default select example" formControlName="status">
+              <option selected value="null">Select one</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label fw-bold"
+              >Client Company</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="company"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label fw-bold"
+              >Project Leader</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="leader"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header bg-secondary d-flex text-white fw-bold">
+        <span class="me-auto">Budget</span>
+        <span
+          ><i
+            class="bi bi-dash-lg fw-bold"
+            data-bs-toggle="collapse"
+            data-bs-target="#budget"
+            aria-expanded="false"
+            aria-controls="budget"
+            role="button"
+          ></i>
+        </span>
+      </div>
+      <div class="collapse" id="budget">
+        <div class="card card-body p-4 mb-0 shadow-sm border" formGroupName="budget">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label fw-bold"
+              >Estimated Budget</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              formControlName="estimatedBudget"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label fw-bold"
+              >Total amount spent</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="amount"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label fw-bold"
+              >Estimated project durarion</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="duration"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="d-flex justify-content-between">
+      <button type="button" class="btn btn-secondary" (click)="resetProject()">Cancel</button>
+      <button type="button" class="btn btn-success" [disabled]="project.invalid" (click)="onAddProject()">Create new Project</button>
+    </div>
+  </div>
+</div>
